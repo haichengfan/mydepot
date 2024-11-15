@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>质谱数据聚类分析</title>
+    <link rel="stylesheet" href="注册登录.css">
+</head>
+<body>
+    <div class="container">
+        <h2>质谱数据聚类分析</h2>
+        <button id="toggleFormBtn" class="toggle-btn" onclick="switchForm()">登录/注册</button>
+
+        <div class="form-container">
+            <div id="loginForm" class="form">
+                <form>
+                    <input type="text" placeholder="用户名" required>
+                    <input type="password" placeholder="密码" required>
+                    <button type="submit">登录</button>
+                </form>
+            </div>
+            <div id="registerForm" class="form" style="display: none;">
+                <form>
+                    <input type="text" placeholder="用户名" required>
+                    <input type="email" placeholder="邮箱" required>
+                    <input type="password" placeholder="密码" required>
+                    <button type="submit">注册</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="注册登录.js"></script>
+</body>
+</html>
