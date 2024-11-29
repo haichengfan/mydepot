@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>质谱数据聚类分析</title>
+    <link rel="stylesheet" href="注册登录.css">
+    <script>
+        const loginApiUrl = '/api/login'; // 假设这是你的后端登录API
+
+        let isLogin = true; // 默认显示登录表单
+
+        function switchForm() {
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            const toggleBtn = document.getElementById('toggleFormBtn');
+
+            // 切换表单显示状态
+            if (isLogin) {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+                toggleBtn.textContent = '登录/注册';
+            } else {
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+                toggleBtn.textContent = '注册/登录';
+            }
+            isLogin = !isLogin; // 切换状态
+        }
+
+        function handleLoginFormSubmit(event) {
+            event.preventDefault(); // 阻止表单默认提交行为
+
+            const username = document.querySelector('#loginForm input[type="text"]').value;
+            const password = document.querySelector('#loginForm input[type="password"]').value;
+
+            // 使用fetch发送登录请求
+            fetch(loginApiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // 登录成功，跳转到首页
+                    window.location.href = '/首页.html'; 
+                } else {
+                    // 登录失败，显示错误消息
+                    alert('登录失败：' + data.message);
+                }
+            })
+            .catch(error => {
+                console.error('登录请求失败：', error);
+                alert('登录请求失败，请稍后再试。');
+            });
+        }
+
+        function handleRegisterFormSubmit(event) {
+            event.preventDefault(); // 阻止表单默认提交行为
+
+            const username = document.querySelector('#registerForm input[type="text"]').value;
+            const email = document.querySelector('#registerForm input[type="email"]').value;
+            const password = document.querySelector('#registerForm input[type="password"]').value;
+
+            // 注册逻辑，这里省略，需要后端API支持
+            // 通常你会发送一个POST请求到后端API，并处理响应
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>质谱数据聚类分析</h2>
+        <button id="toggleFormBtn" class="toggle-btn" onclick="switchForm()">登录/注册</button>
+
+        <div class="form-container">
+            <div id="loginForm" class="form">
+                <form onsubmit="handleLoginFormSubmit(event)">
+                    <input type="text" placeholder="用户名" required>
+                    <input type="password" placeholder="密码" required>
+                    <button type="submit">登录</button>
+                </form>
+            </div>
+            <div id="registerForm" class="form" style="display: none;">
+                <form onsubmit="handleRegisterFormSubmit(event)">
+                    <input type="text" placeholder="用户名" required>
+                    <input type="email" placeholder="邮箱" required>
+                    <input type="password" placeholder="密码" required>
+                    <button type="submit">注册</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

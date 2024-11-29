@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>帮助 - 质谱数据聚类分析系统</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">质谱数据聚类分析系统</div>
+        <nav>
+            <ul>
+                <li><a href="首页.html">首页</a></li>
+                <li><a href="help.html">帮助</a></li>
+                <!-- 其他导航链接 -->
+            </ul>
+        </nav>
+        <div class="user-area">
+            <button onclick="toggleLoginModal()">登录/注册</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>帮助</h1>
+        <p>这里将提供使用质谱数据聚类分析系统的常见问题解答和帮助信息。</p>
+
+        <section>
+            <h2>系统功能</h2>
+            <ul>
+                <li><strong>数据导入</strong>：支持多种格式的质谱数据文件导入。</li>
+                <li><strong>数据预处理</strong>：包括去噪、基线校正、峰值检测等。</li>
+                <li><strong>聚类分析</strong>：提供多种聚类算法选择，如K-means、层次聚类等。</li>
+                <li><strong>结果可视化</strong>：直观展示聚类结果，包括热图、散点图等。</li>
+                <li><strong>参数调整</strong>：允许用户自定义聚类算法的参数。</li>
+                <li><strong>结果导出</strong>：支持将分析结果导出为多种格式。</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>如何开始</h2>
+            <ol>
+                <li>安装和启动：确保您的计算机满足系统运行的最低硬件和软件要求。下载并安装软件，然后启动程序。</li>
+                <li>数据导入：点击“文件”菜单，选择“导入数据”，选择您的质谱数据文件。</li>
+                <li>预处理设置：在“预处理”标签页中，设置去噪、基线校正等参数。</li>
+                <li>选择聚类算法：在“聚类”标签页中，选择一个聚类算法，并设置相关参数。</li>
+                <li>运行分析：点击“运行”按钮，系统将开始聚类分析。</li>
+                <li>查看结果：分析完成后，可以在“结果”标签页中查看和操作结果。</li>
+                <li>结果导出：在“结果”标签页中，选择“导出”功能，将结果保存为所需格式。</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>常见问题解答</h2>
+            <dl>
+                <dt>Q: 如何导入数据？</dt>
+                <dd>A: 点击“文件”菜单，选择“导入数据”，然后选择您的质谱数据文件。支持的格式包括.mzML、.csv等。</dd>
+
+                <dt>Q: 如何调整聚类算法的参数？</dt>
+                <dd>A: 在“聚类”标签页中，选择您想要调整的算法，旁边的参数设置区域会显示可调整的参数。</dd>
+
+                <dt>Q: 结果如何可视化？</dt>
+                <dd>A: 在“结果”标签页中，系统提供了多种可视化工具，包括热图和散点图，帮助您直观理解聚类结果。</dd>
+
+                <dt>Q: 遇到错误怎么办？</dt>
+                <dd>A: 如果遇到错误，请查看错误信息并参考本文档的“故障排除”部分。如果问题仍然无法解决，请联系技术支持。</dd>
+            </dl>
+        </section>
+
+        <section>
+            <h2>故障排除</h2>
+            <ul>
+                <li>错误代码101：数据文件格式不支持。请确保您导入的数据文件是系统支持的格式。</li>
+                <li>错误代码102：内存不足。请关闭其他应用程序以释放内存，或尝试在性能更高的计算机上运行系统。</li>
+                <li>错误代码103：参数设置错误。请检查您的参数设置是否符合算法要求。</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>技术支持</h2>
+            <p>如果您在使用本系统时遇到任何问题，请联系我们的技术支持团队。您可以通过电子邮件、电话或在线聊天获取帮助。</p>
+            <p>Contact Us: +17870671570</p>
+            <p>Email: 2524646990@qq.com</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="quick-links">
+            <a href="privacy-policy.html">隐私政策</a>
+            <a href="terms-of-service.html">使用条款</a>
+            <a href="help-center.html">帮助中心</a>
+        </div>
+        <div class="contact-info">
+            <p>Contact Us: +17870671570</p>
+            <p>Email: 2524646990@qq.com</p>
+        </div>
+        <div class="copyright">
+            <p>© 2024 质谱数据聚类分析系统</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
